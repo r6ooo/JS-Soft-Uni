@@ -1,0 +1,5 @@
+function barcodeGenerator(input){
+    let 
+
+
+}
