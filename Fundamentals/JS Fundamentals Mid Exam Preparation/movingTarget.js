@@ -27,9 +27,11 @@ function target(input) {
         power = Number(power);
 
         if (index >= 0 && index < targetField.length) {
-            targetField[index] -= power;
-            if (targetField[index] <= 0) {
-                targetField.splice(index, 1);
+            if (targetField[index] > 0) {
+                targetField[index] -= power;
+                if (targetField[index] <= 0) {
+                    targetField.splice(index, 1);
+                }
             }
         }
     }
@@ -38,7 +40,8 @@ function target(input) {
         index = Number(index);
         power = Number(powerToAdd);
         if (index >= 0 && index < targetField.length) {
-            targetField[index] += powerToAdd;
+            //targetField[index] += powerToAdd;
+            targetField.splice(index, 0, powerToAdd);
         } else {
             console.log('Invalid placement!');
         }
@@ -49,7 +52,7 @@ function target(input) {
         power = Number(power);
         if (index >= 0 && index < targetField.length) {
             if (index - power >= 0 && index + power < targetField.length) {
-                targetField.splice(index - power, index + power);
+                targetField.splice(index - power, power + power + 1);
             } else {
                 console.log('Strike missed!');
             }
@@ -60,7 +63,7 @@ target(["52 74 23 44 96 110",
     "Shoot 5 10",
     "Shoot 1 80",
     "Strike 2 1",
-    "Add 22 3",
+    "Add 1 3",
     "End"]);
 target(["1 2 3 4 5",
     "Strike 0 1",
