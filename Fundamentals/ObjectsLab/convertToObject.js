@@ -1,13 +1,9 @@
-function convert(firstName, lastName, hairColor) {
+function convert(jsonStr) {
 
-    let info = {};
-    info.name = firstName;
-    info.lastName = lastName;
-    info.hairColor = hairColor;
-
-   
-    console.log(JSON.stringify(info));
+    let person = JSON.parse(jsonStr);
+    for (const key of Object.keys(person)) {
+        console.log(`${key}: ${person[key]}`);
+    }
 
 }
-
-convert('George', 'Jones', 'Brown');
+convert('{"name": "George", "age": 40, "town": "Sofia"}');
