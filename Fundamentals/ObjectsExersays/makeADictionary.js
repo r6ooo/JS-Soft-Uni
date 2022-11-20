@@ -1,6 +1,22 @@
 function dictionary(input) {
 
-    
+    let dictionaryObj = {};
+
+    for (const line of input) {
+        let converted = JSON.parse(line);
+        if (typeof converted === 'object') {
+            for (const key in converted) {
+                dictionaryObj[key] = converted[key];
+            }
+        }
+    }
+
+    let arr =[];
+
+    for (const key in dictionaryObj) {
+       arr.push(`Term: ${key} => Definition: ${dictionaryObj[key]}`);
+    }
+    console.log(arr.sort().join('\n'));
 
 }
 dictionary(['{"Coffee":"A hot drink made from the roasted and ground seeds (coffee beans) of a tropical shrub."}',
@@ -8,4 +24,4 @@ dictionary(['{"Coffee":"A hot drink made from the roasted and ground seeds (coff
     '{"Boiler":"A fuel-burning apparatus or container for heating water."}',
     '{"Tape":"A narrow strip of material, typically used to hold or fasten something."}',
     '{"Microphone":"An instrument for converting sound waves into electrical energy variations which may then be amplified, transmitted, or recorded."}'
-    ]);
+]);
