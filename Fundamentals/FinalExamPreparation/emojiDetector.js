@@ -26,6 +26,7 @@ function extractEmojis(input) {
 
         }
         counter++;
+        cool = 0;
     }
     console.log(`Cool threshold: ${coolThreshold}`);
     console.log(`${counter} emojis found in the text. The cool ones are:`);
