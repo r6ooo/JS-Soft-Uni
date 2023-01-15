@@ -5,7 +5,7 @@ function makePass(input) {
     while (line !== 'Complete') {
         let tokens = line.split(' ');
         let command;
-        if(tokens.length=3){
+        if(tokens.length>2){
              command = tokens[0]+' '+tokens[1];
         }else{
              command = tokens[0];
