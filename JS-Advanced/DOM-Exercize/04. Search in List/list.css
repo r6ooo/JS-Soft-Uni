@@ -57,3 +57,7 @@ button:hover {
     margin: 10px;
     color: white;
 }
+.matches {
+    font-weight: bold;
+    text-decoration: underline;
+}
