@@ -39,7 +39,7 @@ class SummerCamp {
     }
     timeToPlay(typeOfGame, participant1, participant2) {
         let player1 = this.listOfParticipants.find(x => x.name == participant1);
-        
+
         if (!player1) {
             throw new Error(`Invalid entered name/s.`);
         }
@@ -51,34 +51,34 @@ class SummerCamp {
             let nameOfWinner = '';
             let player2 = this.listOfParticipants.find(x => x.name == participant2);
 
-            if(!player2) {
+            if (!player2) {
                 throw new Error(`Invalid entered name/s.`);
             }
-            if(player1.condition != player2.condition) {
+            if (player1.condition != player2.condition) {
                 throw new Error(`Choose players with equal condition.`);
             }
-            if(player1.power > player2.power) {
+            if (player1.power > player2.power) {
                 player1.wins++;
                 nameOfWinner = player1.name;
-            }else if(player2.power > player1.power) {
-                player2.wins ++;
+            } else if (player2.power > player1.power) {
+                player2.wins++;
                 nameOfWinner = player2.name
-            }else {
+            } else {
                 return `There is no winner.`
             }
             return `The ${nameOfWinner} is winner in the game ${typeOfGame}.`
         }
     }
-    
+
     toString() {
         let result = [];
-         result.push(`${this.organizer} will take ${this.listOfParticipants.length} participants on camping to ${this.location}`);
+        result.push(`${this.organizer} will take ${this.listOfParticipants.length} participants on camping to ${this.location}`);
         this.listOfParticipants
-            .sort((a,b)=>b.wins - a.wins)
+            .sort((a, b) => b.wins - a.wins)
             .forEach(x => {
                 result.push(`${x.name} - ${x.condition} - ${x.power} - ${x.wins}`);
             });
-            return result.join('\n');
+        return result.join('\n');
     }
 }
 
