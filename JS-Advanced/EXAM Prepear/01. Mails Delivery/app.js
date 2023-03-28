@@ -109,9 +109,12 @@ function solve() {
                     listOfSends.remove();
                 });
 
-                
+
             });
         }
+        recipientInputElement.value = '';
+        titleInputElement.value = '';
+        messageInputElement.value = '';
     });
 
 }
