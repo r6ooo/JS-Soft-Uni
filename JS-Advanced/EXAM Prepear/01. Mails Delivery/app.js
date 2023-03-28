@@ -111,6 +111,8 @@ function solve() {
 
 
             });
+        } else {
+            return;
         }
         recipientInputElement.value = '';
         titleInputElement.value = '';
