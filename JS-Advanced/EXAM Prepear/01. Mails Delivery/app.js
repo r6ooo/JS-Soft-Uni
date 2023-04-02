@@ -47,6 +47,7 @@ function solve() {
 
             resetButton.addEventListener('click', (e) => {
                 e.preventDefault();
+                
                 recipientInputElement.value = '';
                 titleInputElement.value = '';
                 messageInputElement.value = '';
